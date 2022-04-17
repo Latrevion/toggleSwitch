@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toggleSwitch</title>
+  <style>
+    html,body{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 400px;
+      height: 200px;
+      background-color:red;
+      border-radius: 200px;
+      transition: all .5s;
+
+    }
+
+
+    .switch:after {
+      content: '';
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: white;
+      top: 10px;
+      left: 10px;
+      transition: all .3s;
+    }
+
+    input[type='checkbox']:checked + .switch:after {
+      transform: translateX(200px);
+    }
+
+    input[type='checkbox']:checked + .switch {
+      background-color: green;
+    }
+
+    .offscreen {
+
+      position: absolute;
+      left: -9999px;
+      /*   left: 0px; */
+
+    }
+  </style>
+</head>
+<body>
+
+<input type="checkbox" id="toggle" class="offscreen" />
+<label for="toggle" class="switch"></label>
+</body>
+</html>
